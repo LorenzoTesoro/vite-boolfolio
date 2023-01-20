@@ -6,7 +6,7 @@ import HomeView from './views/HomeView.vue'
 import AboutView from './views/AboutView.vue'
 import ProjectsView from './views/ProjectsView.vue'
 import ContactsView from './views/ContactsView.vue'
-
+import SingleProjectView from './views/SingleProjectView.vue'
 
 // 2 define routes
 const router = createRouter({
@@ -33,6 +33,11 @@ const router = createRouter({
         name: 'contacts',
         component: ContactsView
       },
+      {
+        path: '/projects/:slug',
+        name: 'single-project',
+        component: SingleProjectView
+      }
     ]
 })
 
