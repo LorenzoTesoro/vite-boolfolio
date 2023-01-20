@@ -1,10 +1,11 @@
 <script>
 import axios from "axios";
 import AppBanner from "../components/AppBanner.vue";
+import NotFoundView from "./NotFoundView.vue";
 
 export default {
   name: "SingleProjectView",
-  components: { AppBanner },
+  components: { AppBanner, NotFoundView },
   data() {
     return {
       project: null,
@@ -30,10 +31,7 @@ export default {
           this.project = response.data.results;
           this.loading = false;
         } else {
-          /* TODO: handle the not found post  
-          404 
-          */
-          // https://router.vuejs.org/guide/essentials/navigation.html#navigate-to-a-different-location
+          this.$router.replace("../NotFoundView");
         }
         console.log(response);
       })
