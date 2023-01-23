@@ -2,27 +2,29 @@
 import axios from "axios";
 import AppBanner from "../components/AppBanner.vue";
 import NotFoundView from "./NotFoundView.vue";
+import { store } from "../store.js";
 
 export default {
   name: "SingleProjectView",
   components: { AppBanner, NotFoundView },
   data() {
     return {
+      store,
       project: null,
       loading: true,
-      api_base_url: "http://127.0.0.1:8000",
     };
   },
   methods: {
     getImagePath(path) {
       if (path) {
-        return this.base_api_url + "/storage/" + path;
+        return this.store.api_base_url + "/storage/" + path;
       }
       return "/img/placeholder_600.png";
     },
   },
   mounted() {
-    const url = this.api_base_url + "/api/projects/" + this.$route.params.slug;
+    const url =
+      this.store.api_base_url + "/api/projects/" + this.$route.params.slug;
     console.log(url);
     axios
       .get(url)
@@ -31,7 +33,7 @@ export default {
           this.project = response.data.results;
           this.loading = false;
         } else {
-          this.$router.replace("../NotFoundView");
+          this.$router.push("../NotFoundView");
         }
         console.log(response);
       })

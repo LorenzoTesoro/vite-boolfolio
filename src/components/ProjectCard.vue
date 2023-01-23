@@ -1,12 +1,13 @@
 <script>
 import axios from "axios";
+import { store } from "../store.js";
 
 export default {
   name: "ProjectCard",
   data() {
     return {
+      store,
       projects: null,
-      base_api_url: "http://127.0.0.1:8000",
       loading: true,
       error: null,
       max: 100,
@@ -50,7 +51,7 @@ export default {
     },
   },
   mounted() {
-    this.getProjects(this.base_api_url + "/api/projects");
+    this.getProjects(this.store.api_base_url + "/api/projects");
   },
 };
 </script>
@@ -71,6 +72,10 @@ export default {
               <p>
                 {{ trimDescription(project.description) }}
               </p>
+              <router-link
+                :to="{ name: 'single-project', params: { slug: project.slug } }"
+                >Read more</router-link
+              >
             </template>
             <div v-else>No description for this project</div>
           </div>
