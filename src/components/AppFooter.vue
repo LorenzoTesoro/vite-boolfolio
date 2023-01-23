@@ -1,19 +1,19 @@
 <script>
 export default {
   name: "AppFooter",
+  data() {
+    return {
+      icons: ["facebook", "instagram", "pinterest", "twitter"],
+    };
+  },
 };
 </script>
 <template>
   <footer>
     <div class="container">
-      <div class="icon"><font-awesome-icon icon="fa-brands fa-facebook" /></div>
-      <div class="icon">
-        <font-awesome-icon icon="fa-brands fa-instagram" />
+      <div class="icon" v-for="icon in icons">
+        <font-awesome-icon :icon="`fa-brands fa-${icon}`" />
       </div>
-      <div class="icon">
-        <font-awesome-icon icon="fa-brands fa-pinterest" />
-      </div>
-      <div class="icon"><font-awesome-icon icon="fa-brands fa-twitter" /></div>
     </div>
   </footer>
 </template>
