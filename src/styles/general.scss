@@ -1,2 +1,8 @@
 // Import all of Bootstrap's CSS
 @import "/node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background-color: f8f8fb;
+  font-family: "Roboto Slab", serif;
+  min-height: 100vh;
+}
