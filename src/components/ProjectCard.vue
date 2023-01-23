@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       store,
-      max: 100,
+      max: 10,
     };
   },
   methods: {
@@ -37,12 +37,8 @@ export default {
 
 <template>
   <div class="col">
-    <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
-      <img
-        class="card-image rounded-top"
-        :src="getImagePath(project.cover_image)"
-        alt=""
-      />
+    <div class="card">
+      <img class="card-image" :src="getImagePath(project.cover_image)" alt="" />
       <div class="card-body">
         <h4>{{ project.title }}</h4>
         <template v-if="project.description">
@@ -56,7 +52,7 @@ export default {
         </template>
         <div v-else>No description for this project</div>
       </div>
-      <div class="card-footer text-muted">
+      <div class="card-footer">
         <div class="type">
           <strong>Type: </strong>
           <span v-if="project.type">
@@ -79,3 +75,26 @@ export default {
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.card {
+  height: 100%;
+  padding: 1rem;
+  background-color: #1a2238;
+  border-radius: 1rem;
+  color: #f8f8fb;
+  box-shadow: 0px 5px 23px -3px #1a2238;
+
+  .card-image {
+    padding: 0.5rem;
+    border-radius: 1rem;
+  }
+  p {
+    color: #f8f8fb;
+  }
+
+  .card_footer {
+    color: #f8f8fb;
+  }
+}
+</style>

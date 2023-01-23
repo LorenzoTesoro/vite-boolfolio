@@ -24,6 +24,7 @@ footer {
   color: #f8f8fb;
   height: 70px;
   position: fixed;
+  z-index: 100;
   bottom: 0;
   width: 100%;
   .container {

@@ -51,7 +51,7 @@ nav {
     text-transform: uppercase;
   }
   a.navbar-brand {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.2rem;
     text-decoration: none;
@@ -61,7 +61,8 @@ nav {
   }
 
   li a {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
 
     &:hover {
       color: #ff6900;

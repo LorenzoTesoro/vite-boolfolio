@@ -1,11 +1,17 @@
 // Import all of Bootstrap's CSS
 @import "/node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap");
 
 body {
-  background-color: f8f8fb;
-  font-family: "Roboto Slab", serif;
+  background-color: #f8f8fb;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
 }
 
-#app {
-  min-height: 100vh;
+h1 {
+  color: #29375b;
+  font-weight: 700;
+}
+p {
+  color: #29375b;
 }

@@ -49,10 +49,9 @@ export default {
   <section class="vue-home pt-5">
     <div class="container">
       <template v-if="projects && !loading">
-        <div class="row row-cols-1 row-cols-sm-3 g-4">
+        <div class="row row-cols-1 row-cols-sm-3 g-5">
           <ProjectCard :project="project" v-for="project in projects.data" />
         </div>
-
         <nav
           aria-label="Page navigation"
           class="d-flex justify-content-center pt-5"
@@ -110,7 +109,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-section {
-  height: 100%;
+.vue-home nav {
+  padding-bottom: 5rem;
 }
 </style>
