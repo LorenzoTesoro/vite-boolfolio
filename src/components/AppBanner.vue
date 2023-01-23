@@ -7,7 +7,7 @@ export default {
 
 <template>
   <div class="banner">
-    <div class="container">
+    <div class="container pt-3">
       <h1 class="py-4">{{ title }}</h1>
     </div>
   </div>

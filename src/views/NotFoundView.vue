@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container pt-4">
     <p class="lead">😨 Ops, Page not found!</p>
     <router-link to="/">Go to Homepage</router-link>
   </div>
